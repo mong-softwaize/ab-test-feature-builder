@@ -1,0 +1,36 @@
+$media: (xsm:360px,
+    sm: 640px,
+    md: 991px,
+    lg: 1024px,
+);
+
+@mixin media-query($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}
+
+
+
+$brand-gray-primary:#F5F5F5;
+$brand-gray-secondary:#9E9E9E;
+$brand-gray-tertiary:#e3e3e3;
+$white-primary:#fff;
+$white-secondary:#F8F6F7;
+$black-primary:#000;
+$black-secondary:#212121;
+
+
+
+@mixin flex-position ($justify:center, $align:center, $direction:row, ) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: $justify;
+}

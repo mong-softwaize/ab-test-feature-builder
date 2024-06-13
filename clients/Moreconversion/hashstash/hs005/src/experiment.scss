@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  @include media-query(sm) {
+    .reel2Section {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import './variables';
+@import '../src/lib/shared/shared';
+
+body {
+    .#{$id}__dropdown-container{
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+
+        @media only screen and (max-width: 640px) {
+            &{
+                flex-direction: column;
+            }
+        }
+
+        & .dropdown-title{
+            align-self: flex-start;
+            padding-top:10px;
+            color: #1C549B;
+            font-weight: 559;
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+        & .dropdown-box{
+            width: calc(100% - 57px);
+            margin-left: 15px;
+            @media only screen and (max-width: 640px) {
+                &{
+                    width: 100%;
+                    margin: 10px 0 0;
+                }
+            }
+
+            .#{$id}__errorMessage {
+                &.#{$id}__disable{
+                    display: none;
+                }
+                .#{$id}__errorMessage-wrapper{
+                    display: flex;
+                   
+                    .#{$id}__title{
+                        margin-left:5px;
+                        color: #D0030B;
+                        font-weight: 400;
+                        font-size: 13px;
+                        font-style: normal;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+       
+        & .dropdown-menu{
+            & ul{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                list-style: none;
+
+                & li{
+                    flex-basis: calc(100% / 3 - 7px);
+                    margin:0 0 10px;
+                    text-align: center;
+                    background: #FFF;
+                    border: 2px solid #E9E9E9;
+                    border-radius: 2px;
+
+                    &.#{$id}__notAvailable, &.selected.#{$id}__notAvailable{
+                        position: relative;
+                        background:  rgb(192 192 192);
+                        border: 2px solid rgb(192 192 192);
+                        opacity: 0.5;
+                        pointer-events: none;
+
+                        &::before{
+                            position: absolute;
+                            top:50%;
+                            left:50%;
+                            width:100%;
+                            background:rgb(87 86 86);
+                            content: '';
+                            
+                        }
+                    }
+                   
+                    &:nth-child(2), &:nth-child(5), &:nth-child(8), &:nth-child(11), &:nth-child(14), &:nth-child(17), &:nth-child(20){
+                        margin: 0 10px 10px;
+                    }
+                    @media only screen and (max-width: 640px) {
+                        &{
+                            flex-basis: calc(100% / 3 - 10px);
+                            margin:0 0 15px;
+                        }
+
+                        &:nth-child(2), &:nth-child(5), &:nth-child(8), &:nth-child(11), &:nth-child(14), &:nth-child(17), &:nth-child(20){
+                            margin: 0 15px 15px;
+                        }
+                    }
+
+                    &.selected{
+                        border: 2px solid #0053A0;
+                    }
+
+                    a{
+                        display: block;
+                        width:100%;
+                        padding:10px 0;
+                        color: #000;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-decoration: none;
+                        transition: all ease-in-out 0.3s;
+                    }
+                }
+            }
+
+        }
+ 
+    }
+
+    & .pr__product{
+        & .pr__prices{
+            & > div{
+                @media (min-width: 641px) and (max-width: 1024px) {
+                    &{
+                        width: calc(100% / 3);
+                    }
+                  }
+            }
+        }
+    }
+}

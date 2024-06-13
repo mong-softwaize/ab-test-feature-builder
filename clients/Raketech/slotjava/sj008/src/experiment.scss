@@ -1,0 +1,70 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__show {
+    display: table-row !important;
+
+    @include media-query(md) {
+      display: grid !important;
+    }
+  }
+
+  #table {
+    .casino-table__data-row.#{$id}__hide {
+      display: none;
+    }
+
+    &.sj008__show-full {
+      svg.show {
+        display: none;
+      }
+      svg.less {
+        transform: translateY(5px);
+      }
+    }
+
+    &:not(.sj008__show-full) {
+      svg.less {
+        display: none;
+      }
+    }
+  }
+
+  &__showMoreButtonWrapper {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+
+    .#{$id}__showMoreButton {
+      display: flex;
+      padding: 10px 30px;
+      justify-content: center;
+      gap: 6px;
+      background: transparent;
+      border-radius: 5px;
+      border: 1px solid #ff7556;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ff7556;
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+        span {
+          color: #fff;
+        }
+      }
+
+      span {
+        color: #ff7556;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+    }
+  }
+}

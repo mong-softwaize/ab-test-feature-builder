@@ -1,0 +1,25 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__casinoMessageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4px;
+    .toplistTitle {
+      color: #006eba;
+      margin: 0;
+      text-align: left;
+      font-size: 0.9em;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+  }
+
+  .mui-dspu10 {
+    a {
+      display: inline;
+    }
+  }
+}

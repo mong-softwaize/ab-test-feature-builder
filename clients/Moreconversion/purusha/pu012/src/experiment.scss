@@ -1,0 +1,8 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .ImageHero--newsletter .SectionHeader.SectionHeader {
+        margin-bottom: 40px !important;
+    }
+}

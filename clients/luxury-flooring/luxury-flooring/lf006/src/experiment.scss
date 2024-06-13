@@ -1,0 +1,52 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  scroll-behavior: smooth;
+
+  &__announcementBanner {
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    line-height: 30px;
+    background-color: #c9a361;
+
+    &-text {
+      display: block;
+      width: max-content;
+      text-align: center;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      text-wrap: nowrap;
+    }
+  }
+
+  &__animation-wrapper {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marqueetest 13s linear infinite;
+
+    &.marquee2 {
+      animation-delay: 6.5s;
+    }
+    // &.marquee3 {
+    //   animation-delay: 10s;
+    // }
+  }
+  @keyframes marqueetest {
+    0% {
+      left: 130%;
+    }
+    100% {
+      left: -130%;
+    }
+  }
+}

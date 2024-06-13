@@ -1,0 +1,662 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+body {
+  opacity: 0;
+}
+
+main {
+  background-color: #fff;
+}
+
+.#{$id} {
+  &__show {
+    opacity: 1 !important;
+  }
+
+  .header-return,
+  .header-tagline {
+    display: none !important;
+  }
+
+  .header-wrapper {
+    background: #111827 !important;
+  }
+
+  .FE-Form-Validator__step2 .fe-progress-bar {
+    background: linear-gradient(90deg, #0891B2 50%, #0891B2 50%) !important;
+  }
+
+  .sales-form-wrapper,
+  .sales-form-title {
+    background-color: #fff !important;
+  }
+
+  &__techConnectContainer {
+    padding: 0px 48px 0;
+
+    @include media-query(lg) {
+      & {
+        padding: 17px;
+      }
+    }
+
+    &+.fe-static-page-content {
+      display: none;
+    }
+
+    .#{$id}__title {
+      margin: 64px 0 24px 0;
+      font-size: 56px;
+      font-weight: 700;
+      font-family: 'Degular';
+      line-height: 67px;
+      color: #111827;
+
+      @include media-query(lg) {
+        margin: 40px 0 16px 0;
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+
+    .#{$id}__subTitle {
+      margin: 0 0 48px 0;
+      color: #0f172a;
+      font-family: "IBM Plex Sans";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+
+      @include media-query(lg) {
+        margin: 0 0 32px 0;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+
+    .#{$id}__lists {
+      padding: 0;
+      margin: 0 0 48px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      list-style-type: none;
+
+      @include media-query(lg) {
+        gap: 12px;
+      }
+
+      .#{$id}__item {
+        display: flex;
+        align-items: center;
+        max-width: 580px;
+        gap: 24px;
+
+        .#{$id}__itemText {
+          color: #111827;
+          font-size: 24px;
+          font-family: "IBM Plex Sans";
+          font-weight: 600;
+          line-height: 32px;
+
+          @include media-query(lg) {
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+
+        .#{$id}__itemIcon {
+          width: 104px;
+          height: 82px;
+
+          img {
+            width: 104px;
+            height: 82px;
+            max-width: max-content !important;
+          }
+
+          @include media-query(lg) {
+            width: 70px;
+            height: 64px;
+
+            img {
+              width: 70px;
+              height: 64px;
+            }
+          }
+        }
+      }
+    }
+
+    .#{$id}__contactUs {
+      width: 100%;
+      max-width: 587px;
+      margin-bottom: 48px;
+
+      @include media-query(lg) {
+        margin-bottom: 0px;
+      }
+
+      .#{$id}__contactUsTitle {
+        color: #0f172a;
+        font-size: 24px;
+        font-style: italic;
+        font-family: "IBM Plex Sans";
+        font-weight: 400;
+        line-height: 33px;
+
+        .#{$id}__bold {
+          font-weight: 700;
+        }
+
+        @include media-query(lg) {
+          font-size: 18px;
+          line-height: 24px;
+
+        }
+      }
+    }
+  }
+
+  &__salesForm {
+    max-width: 512px !important;
+    margin-top: 96px !important;
+    padding: 32px 48px 24px !important;
+    background: #F4F4F5;
+    border-radius: 8px;
+    font-family: "IBM Plex Sans";
+
+    @include media-query(lg) {
+      margin: 24px auto 0 !important;
+      padding: 36px 16px !important;
+    }
+
+    .bm_form_heading {
+      margin: 0 auto 16px;
+      text-align: center;
+
+      @include media-query(lg) {
+        margin: 0 auto 0;
+      }
+
+      p {
+        margin: 0 auto 8px;
+        color: #18181B;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+
+        @include media-query(lg) {
+          margin: 0 auto 16px;
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+
+      .#{$id}__formHeaderSubTitle {
+        margin-bottom: 24px;
+        color: #18181B;
+        text-align: center;
+        font-family: "IBM Plex Sans";
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+
+        @include media-query(sm) {
+          margin-bottom: 16px;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+
+      .fe-progress-bar {
+        width: 88%;
+        border: 2px solid #0891B2;
+        background: #ECFEFF;
+
+        span {
+          display: none;
+        }
+      }
+
+      .#{$id}__progressCounter {
+        margin-top: 4px;
+        color: #18181B;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 500;
+        line-height: 21px;
+      }
+
+      .fe-progress-bar.fe-step1-complete {
+        background: linear-gradient(90deg, #0891B2 50%, #ECFEFF 50%);
+      }
+    }
+
+    .mktoForm {
+      padding-top: 16px;
+
+      @include media-query(lg) {
+        padding: 16px 0 10px 0 !important;
+      }
+
+      #fe-form-question {
+        h3 {
+          margin: 0;
+          color: #111827;
+          text-align: center;
+          font-family: "IBM Plex Sans";
+          font-size: 20px;
+          font-weight: 600 !important;
+          line-height: 30px;
+
+          @include media-query(lg) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      #fe-form-answers {
+        margin: 32px auto 40px !important;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include media-query(lg) {
+          margin: 16px auto !important;
+          gap: 12px;
+        }
+
+        button.fe-answer-btn {
+          background: #F4F4F5;
+          margin-bottom: 0 !important;
+
+          label {
+            padding: 12px 24px !important;
+            border-radius: 24px;
+            border: 1px solid #D4D4D8;
+            color: #111827;
+            text-align: center;
+
+            span {
+              font-family: "IBM Plex Sans";
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 24px;
+
+              @include media-query(lg) {
+                font-size: 14px;
+                line-height: 21px;
+              }
+            }
+          }
+        }
+
+        button.fe-answer-btn.fe-active label {
+          color: #fff;
+        }
+      }
+
+      .fe-next-button {
+        margin-top: 0 !important;
+        text-align: center;
+
+        button {
+          width: 260px;
+          color: #FFF;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: center;
+          border-radius: 50px;
+          background: #0E7490;
+        }
+      }
+
+      .mktoButtonWrap {
+        display: flex;
+        justify-content: center;
+
+        .multi-step-step1-btn {
+          width: 260px !important;
+          color: #FFF;
+          font-weight: 700;
+          font-size: 16px !important;
+          line-height: 24px;
+          text-align: center;
+          border-radius: 50px;
+          background: #0E7490 !important;
+        }
+      }
+    }
+
+    form.mktoForm {
+      .mktoFormRow {
+        input {
+          padding: 12px 24px !important;
+          border-radius: 24px !important;
+          border: 1px solid #D4D4D8 !important;
+          box-shadow: none !important;
+        }
+
+        .mktoFieldDescriptor {
+          .iti--allow-dropdown {
+            width: 100% !important;
+          }
+
+          ul.iti__country-list {
+            width: 450px !important;
+            border-radius: 0 !important;
+            overflow-x: hidden !important;
+          }
+        }
+      }
+    }
+
+    .bm_formCta {
+      float: none !important;
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      text-align: center;
+      color: #111827;
+      font-family: "IBM Plex Sans";
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-decoration-line: underline;
+    }
+  }
+
+  .#{$id}__logoSection {
+    background-image: none;
+
+    .logo-color {
+      padding: 48px 0;
+      background-color: #ecfeff;
+
+      @include media-query(lg) {
+        padding: 28px 0 !important;
+      }
+
+      .bmsection-content {
+        padding-top: 0 !important;
+        color: #2b2927;
+        text-align: center;
+        font-family: "IBM Plex Sans";
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 48px;
+
+        @include media-query(lg) {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .logos {
+      gap: 40px;
+      justify-content: center;
+
+      @include media-query(lg) {
+        padding: 28px 28px 0;
+        gap: 30px;
+        justify-content: space-evenly;
+      }
+
+      .logo {
+        padding: 0 !important;
+        width: 104px;
+        height: 104px;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .logo:nth-child(2) {
+        width: 56px;
+        height: 56px;
+
+        @include media-query(lg) {
+          width: 75px;
+          height: 75px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .#{$id}__weKnowSection {
+    padding: 72px 0;
+    background: #fafafa;
+
+
+    @include media-query(lg) {
+      padding: 50px 0;
+    }
+
+    .bm_know_tech_section {
+      padding: 0 0 0 80px !important;
+      max-width: 1260px !important;
+      
+      @include media-query(xlg) {
+        max-width: 1140px !important;
+      }
+      @include media-query(xxlg) {
+        padding: 0 !important;
+      }
+
+      .bm_knowtech_content {
+        @include media-query(xxlg) {
+          padding: 0 0 0 50px !important;
+        }
+
+        @include media-query(sm) {
+          padding: 12px !important;
+        }
+      }
+
+      .align-image {
+        display: none;
+      }
+
+      .#{$id}__newStats {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        @include media-query(lg) {
+          width: 100%;
+          justify-content: center;
+          margin-top: 20px;
+          gap: 30px
+        }
+
+        .#{$id}__statsContainer {
+          min-width: 150px;
+          text-align: center;
+
+          @include media-query(lg) {
+            min-width: auto;
+          }
+
+          h1 {
+            color: #06b6d4;
+            font-family: 'Degular';
+            font-size: 72px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 86px;
+            margin: 0;
+
+            @include media-query(lg) {
+              font-size: 32px;
+              line-height: 40px;
+            }
+          }
+
+          p {
+            color: #18181b;
+            text-align: center;
+            font-family: 'IBM Plex Sans';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            margin: 8px 0 0;
+
+            @include media-query(lg) {
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+
+      .bm_know_heading {
+        color: #18181b;
+        font-family: "Degular";
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+
+        @include media-query(lg) {
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+
+      .bm_knowtech_para {
+        margin: 24px 0 0;
+        color: #18181b;
+        font-family: "IBM Plex Sans";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+
+        @include media-query(lg) {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      .bm_knowtech_content {
+        padding-bottom: 0;
+      }
+
+      .color-content {
+        display: none;
+      }
+
+      .bm_tech_position_text {
+        display: none;
+      }
+    }
+  }
+
+  &__bmTechSection {
+    padding: 80px 0;
+    background: #fff;
+
+    @include media-query(lg) {
+      padding: 50px 0;
+    }
+
+    .bm_tech_position_text {
+      max-width: 1014px !important;
+
+      .bm_position_para {
+        margin: 32px 0 24px !important;
+        color: #18181B;
+        text-align: center;
+        font-family: "IBM Plex Sans";
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+
+        @include media-query(lg) {
+          margin: 16px 0 16px !important;
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+
+      .bm_position_bottom_text {
+        color: #3F3F46;
+        text-align: center;
+        font-family: "IBM Plex Sans";
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+
+        @include media-query(lg) {
+          font-size: 20px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+
+  .#{$id}__footerSection {
+    background: #fafafa;
+    border-top: none;
+
+    .bm_fotter_section {
+      display: flex;
+      flex-direction: column;
+      padding-top: 80px;
+      padding-bottom: 80px;
+
+      @include media-query(lg) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .dots.bm_dots {
+        display: none;
+      }
+
+      .bm_fotter_text {
+        color: #18181b;
+        text-align: center;
+        font-size: 48px;
+        font-family: 'Degular';
+        font-weight: 700;
+        line-height: 58px;
+        margin-bottom: 48px;
+
+        @include media-query(lg) {
+          font-size: 28px;
+          line-height: 32px;
+          margin-bottom: 24px;
+        }
+      }
+
+      .fotter_contact_btn {
+        width: 200px;
+        height: auto;
+        margin: 0;
+        padding: 12px 0;
+        border-radius: 50px;
+        background: #0e7490;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-family: "IBM Plex Sans";
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+  }
+}

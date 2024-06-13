@@ -1,0 +1,142 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .end-date .date_pickertext:not(.mobileAverageView) {
+        margin-bottom: 35px;
+
+        @include media-query(md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__active {
+        border: 1px solid #53565A;
+    }
+
+    &__hireLonger {
+        position: relative;
+        margin: 35px 0;
+        padding: 16px 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #fff;
+
+        @include media-query(md) {
+            margin: 0 -15px;
+            background-color: #F5F5F5;
+        }
+
+        &-header {
+
+            &-title,
+            &-details {
+                color: #53565A;
+                font-size: 12px;
+                line-height: 14.5px;
+            }
+
+            &-title {
+                margin-bottom: 8px;
+                font-weight: 700;
+            }
+
+            &-details {
+                font-weight: 400;
+            }
+        }
+
+        &-options {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        &-option {
+            margin: 0 !important;
+            padding: 8px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+
+            input[type="radio"] {
+                margin: 0 !important;
+                position: relative;
+                cursor: pointer;
+            }
+
+            input[type="radio"]::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-color: #53565A;
+                border-radius: 50%;
+                position: absolute;
+                left: -2px;
+                top: -1px;
+
+                @include media-query(md) {
+                    left: -1px;
+                }
+            }
+
+            input[type="radio"]::after {
+                content: "";
+                width: 11px;
+                height: 11px;
+                background-color: #fff;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                z-index: 2;
+            }
+
+            input[type="radio"]:checked::after {
+                background-color: #53565A;
+            }
+
+            span {
+                margin: 0 !important;
+                font-weight: 500 !important;
+                font-size: 12px !important;
+                cursor: pointer;
+            }
+        }
+
+        &-endDateText {
+            color: #53565A;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14.5px;
+        }
+
+        &-date {
+            color: #53565A;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14.5px;
+        }
+
+        &-offer {
+            position: absolute;
+            top: -16px;
+            right: 9px;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0089CF;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
+            border: 2px solid #0089CF;
+            background: #FFF;
+        }
+    }
+}

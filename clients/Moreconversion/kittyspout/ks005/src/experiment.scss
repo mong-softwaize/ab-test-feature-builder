@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.ks005 .variant-wrapper fieldset[name='Model'] {
+  display: none !important;
+}
+.ks005
+  .variant-wrapper
+  label[for='ProductSelect-template--17257182167260__main-7687835353308-option-0'] {
+  display: none !important;
+}

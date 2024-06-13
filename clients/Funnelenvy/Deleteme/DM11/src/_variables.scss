@@ -1,0 +1,23 @@
+$media: (xsm:360px,
+    sm: 600px,
+    md:767px,
+    lg: 1023px,
+    xlg: 1425px,
+);
+
+@mixin media-query($breakpoint) {
+
+    @each $breakpoints,
+    $size in $media {
+        @if $breakpoint==$breakpoints {
+            @media screen and (max-width: $size) {
+                @content;
+            }
+        }
+    }
+}
+
+
+$brand-gray-primary: #f1f1f1;
+$brand-gray-secondary: #e5e5e5;
+$brand-gray-tertiary: #c5c5c5;

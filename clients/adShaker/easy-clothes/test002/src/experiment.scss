@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    .free-shipping__text.add-more{
+        display: flex;
+        gap: 12px;
+        padding: 4px 8px;
+    }
+}

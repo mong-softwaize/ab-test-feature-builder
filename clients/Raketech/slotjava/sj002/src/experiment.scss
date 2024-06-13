@@ -1,0 +1,131 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable font-family-name-quotes */
+@import './variables';
+@import '../src/lib/shared/shared';
+
+.#{$id} {
+  &__hide {
+    display: none;
+  }
+
+  // New css
+
+  &__bookmakercards {
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+
+    &-swiper {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: auto;
+      bottom: -1px;
+      width: 24px;
+      height: 24px;
+      background-color: #d1d8e8;
+      border-radius: 4px;
+      //transform: translateY(-50%);
+      background-image: url(https://raketect-cro-public.s3.ap-southeast-2.amazonaws.com/images/slotjava/angle-right.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 6px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .swiper-button-prev {
+      left: auto;
+      right: 40px;
+      transform: scale(-1);
+    }
+
+    .swiper-pagination {
+      bottom: 10px !important;
+      left: 0 !important;
+      width: max-content !important;
+    }
+    .swiper-pagination-bullet {
+      //background-color: #d1d8e8;
+      &.swiper-pagination-bullet-active {
+        width: 28px;
+        border-radius: 50px;
+        background-color: #2f3c7f;
+      }
+    }
+  }
+  &__bookmakercard {
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  &__academy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    //padding: 0 10px;
+  }
+
+  &__academy-col1 {
+    width: 100%;
+    padding-left: 10px;
+    padding: 10px 0 10px 10px;
+
+    .slot-text {
+      width: 100%;
+      max-width: 55px;
+      padding: 5px 4px;
+      background: #ffffff;
+      border-radius: 3px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .slot-name {
+      width: 100%;
+      height: auto;
+      min-height: 42px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      display: flex;
+      @include media-query(lg) {
+        font-size: 12px;
+      }
+      @include media-query(md) {
+        font-size: 14px;
+      }
+    }
+  }
+  &__academy-col2 {
+    position: relative;
+    width: 100%;
+    max-width: 140px;
+    padding-right: 5px;
+    //height: 86px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  //new css ends
+}

@@ -1,0 +1,38 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  media-gallery {
+    .slider-buttons {
+      display: none;
+    }
+
+    .slider.slider--mobile {
+      @media screen and (max-width: 749px) {
+        margin-bottom: 0;
+        padding: 0.5rem 1px;
+      }
+    }
+
+    slider-component.thumbnail-slider {
+      @media screen and (max-width: 749px) {
+        margin-left: 0;
+        margin-right: 0;
+        display: block !important;
+      }
+
+      li {
+        width: 68px;
+
+        // &:first-child {
+        //   @media screen and (max-width: 749px) {
+        //     margin-left: auto;
+        //   }
+        // }
+        &:last-child {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

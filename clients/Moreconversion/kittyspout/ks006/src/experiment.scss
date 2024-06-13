@@ -1,0 +1,11 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__catDrinkingWater {
+    & > div {
+      flex-direction: row-reverse !important;
+      gap: 10px;
+    }
+  }
+}

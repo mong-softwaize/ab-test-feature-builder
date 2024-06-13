@@ -1,0 +1,115 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .cart.main.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .action.continue {
+      display: inline-block !important;
+      margin-right: 16px;
+      padding: 7px 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      &:hover {
+        background: #e1e1e1;
+        border: 1px solid #ccc;
+        color: #333;
+      }
+    }
+  }
+
+  .page-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__callus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    a.number {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      background-color: #eee;
+      border-radius: 75px;
+      &:hover {
+        text-decoration: underline;
+        background: #e1e1e1;
+      }
+      & > span:last-child {
+        font-weight: 700;
+      }
+    }
+
+    span {
+      display: flex;
+    }
+  }
+
+  &__deliverytime {
+    width: 100%;
+    max-width: 235px;
+    margin-top: 20px;
+    margin-left: auto;
+    padding: 16px 8px;
+    font-size: 12px;
+    border: 1px solid #f0b130;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    .page-title-wrapper {
+      flex-direction: column;
+      width: 100%;
+      gap: 8px;
+      justify-content: center;
+    }
+    .cart.main.actions {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+
+      .continue {
+        margin: auto;
+        text-align: center;
+      }
+    }
+
+    &__deliverytime {
+      max-width: calc(100% - 50px);
+      margin: 20px auto;
+      font-size: 14px;
+      br {
+        display: none;
+      }
+    }
+  }
+}

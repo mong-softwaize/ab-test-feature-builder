@@ -1,0 +1,48 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  #cart-drawer {
+    z-index: 999999;
+    .#{$id}__cartUpsellMobile + #cart-drawer-recommendations {
+      display: none;
+    }
+
+    .#{$id}__cartUpsell,
+    .#{$id}__cartUpsellMobile {
+      .#{$id}__prodInfo {
+        a {
+          display: flex;
+          flex-direction: column;
+        }
+        .price-container {
+          display: flex;
+          gap: 5px;
+
+          .compare-at-price {
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .horizontal-product-list {
+        gap: 0.5rem;
+        .swiper-slide {
+          width: 100% !important;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .#{$id}__cartUpsellMobile {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .#{$id}__cartUpsell {
+        display: none;
+      }
+    }
+  }
+}

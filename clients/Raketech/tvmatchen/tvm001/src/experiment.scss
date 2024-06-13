@@ -1,0 +1,146 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__hide {
+    display: none !important;
+  }
+
+  #match-container {
+    .event_day__js {
+      h2 {
+        font-weight: 600;
+      }
+    }
+  }
+  .match-container .day .day-title {
+    border-top: 1px solid #eee;
+  }
+  .match-container .day .match-list > div {
+    border-width: 1px !important;
+  }
+
+  .match-detail {
+    position: relative;
+
+    & > div {
+      min-height: 48px;
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      width: calc(100% - 50px);
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      line-height: 18px !important;
+      color: #222222 !important;
+    }
+
+    p > a {
+      color: #909090 !important;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__tipRow {
+    i.icn {
+      top: 60% !important;
+      display: block !important;
+      color: #000 !important;
+    }
+  }
+
+  &__viewoptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0;
+    padding-right: 0 !important;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      //border-radius: 6px;
+    }
+
+    & > a.TV {
+      & + .Streama {
+        position: relative;
+        margin-left: 10px;
+        &:before {
+          position: absolute;
+          top: 50%;
+          left: -10px;
+          width: 1px;
+          height: 28px;
+          background-color: #909090;
+          transform: translateY(-50%);
+          content: '';
+        }
+      }
+    }
+  }
+
+  &__viewoption {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 40px;
+    padding: 2px;
+    background-color: #fafafa;
+    border: 2px solid #eeeeee;
+    border-radius: 6px;
+
+    &[data-promoted='true'],
+    &[data-channelname='TV4 Play'] {
+      background-color: #e0f2f9;
+      border: 1px solid #0092d0;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .image {
+      width: 34px;
+      height: 34px;
+      img {
+        border-radius: 4px;
+      }
+    }
+    &.betting {
+      position: absolute !important;
+      top: 7px;
+      right: 20px;
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
+
+      .image {
+        width: 40px;
+        height: 40px;
+        img {
+          border-radius: 4px;
+          &[alt*='Paf'] {
+            border: 1px solid #48b97a;
+          }
+          &[alt*='Speedybet'] {
+            border: 1px solid #0092d0;
+          }
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      span {
+        font-weight: 700;
+        font-size: 12px !important;
+        line-height: 12px !important;
+        color: #6c6c70 !important;
+      }
+    }
+  }
+}

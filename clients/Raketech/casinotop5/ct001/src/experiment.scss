@@ -1,0 +1,10 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &__grayscale {
+    filter: grayscale(100%) !important;
+    opacity: 0.5;
+    background-color: #ffce51;
+  }
+}

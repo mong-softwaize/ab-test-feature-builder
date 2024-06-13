@@ -1,0 +1,48 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+    &-1 {
+        .#{$id}__container {
+            margin-bottom: 21px;
+            padding: 0 20px;
+        }
+    }
+
+    &-2 {
+        .#{$id}__container {
+            margin: 8px 58px 15px 58px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 20px 6px 8px;
+            border: 1.5px solid #9888B4;
+
+            @include media-query(md) {
+                margin: 8px 46px 13px 46px;
+                padding: 12px 5px 9px;
+            }
+        }
+
+        .#{$id}__container::before {
+            content: 'Guaranteed SAFE Checkout';
+            width: 184px;
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #9888B4;
+            background-color: #fff;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 17px;
+
+            @include media-query(md) {
+                width: 173px;
+                font-size: 12px;
+            }
+        }
+    }
+}
