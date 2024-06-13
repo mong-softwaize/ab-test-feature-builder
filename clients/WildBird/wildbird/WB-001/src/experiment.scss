@@ -1,0 +1,167 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    body {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 1s; /* Delay before the animation starts */
+    }
+    header:not(.#{$id}__sidenav) {
+      .u-show--fromDesktop {
+        display: none;
+      }
+
+      &.Collection__header .info {
+        width: 60% !important;
+        grid-column: 1 !important;
+        margin: 0 auto;
+        text-align: center;
+        @media screen and (max-width: 767px) {
+          width: 90% !important;
+        }
+      }
+
+      &.Collection__header .Collection__header__nav {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    .Main__content {
+      .Container {
+        .Collection__navigation {
+          margin-left: 30%;
+          padding-left: 5px;
+          .#{$id}__filter {
+            display: none;
+            @media screen and (max-width: 1023px) {
+              display: flex;
+              position: relative;
+              grid-gap: 5px;
+              align-items: center;
+
+              &.open .arrow {
+                position: relative;
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-color: transparent;
+                border-top: 0;
+                border-bottom-color: #c99982;
+                border-width: 12px;
+                border-right-width: 12px;
+                border-left-width: 12px;
+                bottom: -14px;
+                left: 2px;
+                position: absolute;
+                transform: translate(50%);
+                z-index: 11;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-color: transparent;
+                  border-top: 0;
+                  border-bottom-color: #fff;
+                  bottom: -13px;
+                  left: -9px;
+                  border-width: 10px;
+                  border-right-width: 9px;
+                  border-left-width: 9px;
+                }
+              }
+            }
+          }
+
+          & > .status {
+            @media screen and (max-width: 1023px) {
+              display: none;
+            }
+          }
+
+          @media screen and (max-width: 1023px) {
+            margin: 0 auto;
+            padding-left: 0;
+          }
+        }
+        .#{$id}__container {
+          display: flex;
+          grid-gap: 10px;
+          .DropdownContainer {
+            width: 30%;
+
+            & + div {
+              width: calc(100% - 30% + 10px);
+              @media screen and (max-width: 1023px) {
+                width: 100%;
+              }
+            }
+
+            @media screen and (max-width: 1023px) {
+              display: none;
+              opacity: 0;
+            }
+          }
+
+          &.#{$id}__mobileDropdownContainer {
+            display: block;
+            position: relative;
+            opacity: 1;
+            .DropdownContainer {
+              opacity: 1;
+              display: block;
+            }
+            .#{$id}__Dropdown__contents {
+              display: block;
+              max-width: 280px;
+              width: 100%;
+              padding: 1rem;
+              background: #fff;
+              top: -4px;
+              left: 0;
+              position: absolute;
+              border-top: 2px solid #c99982;
+              box-shadow: #0000000d 0 8px 18px;
+              opacity: 1;
+              z-index: 10;
+
+              @media screen and (max-width: 767px) {
+                left: 10px;
+              }
+            }
+
+            .u-show--fromTablet {
+              display: flex !important;
+              column-gap: 10px;
+            }
+          }
+          .#{$id}__sidenav {
+            .Collection__header__nav {
+              max-width: 100%;
+
+              .navigation {
+                padding-left: 0;
+                .navigation_group {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
