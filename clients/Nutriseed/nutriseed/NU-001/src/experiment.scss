@@ -2,6 +2,10 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
+  .ns-20-main-container:not(.#{$id}__hero-section) {
+    display: none;
+  }
+
   .NU-001__hero-section {
     padding: 80px 0px 50px 218px;
     .ns-20-text-wrapper {
@@ -13,7 +17,11 @@
       padding: 0 16px 0 20px;
 
       @media screen and (max-width: 1000px) {
-        margin-top: 40px;
+        width: calc(100% + 24px);
+        margin-left: -12px;
+        padding-top: 23px !important;
+        padding-bottom: 38px !important;
+        background-color: #fbf4ef;
       }
     }
     .header-secondary-message {
@@ -41,6 +49,22 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+
+      .#{$id}__reviews {
+        display: flex;
+        align-items: center;
+        width: 67%;
+        margin: 0 auto;
+        .#{$id}__text {
+          font-size: 14px;
+          font-weight: bold;
+          color: #00594e;
+        }
+
+        .#{$id}__image {
+          margin-left: 8px;
+        }
+      }
 
       @media screen and (max-width: 1000px) {
         display: none !important;
@@ -77,25 +101,19 @@
           display: block;
           object-fit: cover;
           height: 100%;
+          transform: translate(-29px, 42px);
         }
       }
 
       @media screen and (max-width: 1000px) {
         position: relative;
-        width: calc(100% + 20px);
-        margin-left: -10px;
-        scale: 1.14;
-
-        &::after {
-          content: '';
-          position: absolute;
-          display: block;
-          width: 100%;
-          height: 52px;
-          background: red;
-          bottom: 0px;
-          clip-path: url(#my-clip-path);
-        }
+        width: calc(100% + 150px);
+        margin-left: -28px;
+        overflow: hidden;
+      }
+      @media screen and (max-width: 650px) {
+        width: calc(100% + 120px);
+        margin-left: -12px;
       }
     }
 
@@ -115,14 +133,75 @@
       }
     }
 
-    svg {
-      display: none;
-    }
-
     .header-main-message.small {
       @media screen and (max-width: 1000px) {
-        margin-bottom: 35px;
+        margin-bottom: 0px;
       }
+    }
+
+    .custom-shape-divider-bottom-1719447840 {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1719447840 svg {
+      position: relative;
+      display: block;
+      width: calc(137% + 1.3px);
+      height: 50px;
+      transform: rotateY(180deg);
+    }
+
+    .custom-shape-divider-bottom-1719447840 .shape-fill {
+      fill: #fbf4ef;
+    }
+
+    .ns-20-mobile-anchor {
+      a {
+        gap: 0;
+
+        &.shop-juice {
+          border: 1px solid #00594e !important;
+          background-color: #fff;
+          color: #00594e !important;
+        }
+
+        &::after {
+          top: 0;
+        }
+      }
+      & > a:first-child {
+        color: #fff;
+      }
+      @media screen and (max-width: 1000px) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        .#{$id}__reviews {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 12px;
+          .#{$id}__text {
+            font-size: 14px;
+            font-weight: bold;
+            color: #00594e;
+          }
+
+          .#{$id}__image {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      padding: 12px 12px 0 12px !important;
     }
 
     @media (min-width: 1000px) and (max-width: 1500px) {
@@ -132,11 +211,3 @@
     }
   }
 }
-
-// <svg xmlns="http://www.w3.org/2000/svg" width="393" height="147" viewBox="0 0 393 147" fill="none">
-// <path d="M0 10C0 10 46.7767 16 102.5 16C154.5 16 226.5 -2.47484e-05 283.5 0C333.172 2.15667e-05 393 10 393 10V146.5H0V10Z" fill="#FBF4EF"/>
-// </svg>
-
-// <svg width="328" height="85" viewBox="0 0 328 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-// <path d="M0 5.80205C0 5.80205 39.0401 9.28328 85.5471 9.28328C128.947 9.28328 189.038 -1.43591e-05 236.611 0C278.067 1.25131e-05 328 5.80205 328 5.80205V85H0V5.80205Z" fill="white"/>
-// </svg>
