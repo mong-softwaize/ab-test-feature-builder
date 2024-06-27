@@ -7,7 +7,7 @@ import { hero } from './components/hero';
 const { ID, VARIATION } = shared;
 
 const init = () => {
-  const exitingHeroSection = document.querySelector('.ns-20-main-container');
+  const exitingHeroSection = document.querySelector('.section.hero.desktop_layout');
   if (!document.querySelector(`.${ID}__hero-section`)) {
     exitingHeroSection.insertAdjacentHTML('afterend', hero(ID));
   }
