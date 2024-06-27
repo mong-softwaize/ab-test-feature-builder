@@ -1,5 +1,46 @@
-export const hero = (id) => {
-  const html = `
+(function () {
+	'use strict';
+
+	function getDefaultExportFromCjs (x) {
+		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+	}
+
+	var shared = {
+	    ID: "NU-001",
+	    VARIATION: "1",
+	    CLIENT: "Nutriseed",
+	    SITE: "nutriseed"
+	  };
+	var shared$1 = getDefaultExportFromCjs(shared);
+
+	const setup = () => {
+	  const { ID, VARIATION } = shared$1;
+	  document.documentElement.classList.add(ID);
+	  document.documentElement.classList.add(`${ID}-${VARIATION}`);
+	};
+
+	const pollerLite = (conditions, callback, maxTime = 10000) => {
+	  const POLLING_INTERVAL = 25;
+	  const startTime = Date.now();
+	  const interval = setInterval(() => {
+	    const allConditionsMet = conditions.every((condition) => {
+	      if (typeof condition === 'function') {
+	        return condition();
+	      }
+	      return !!document.querySelector(condition);
+	    });
+	    if (allConditionsMet) {
+	      clearInterval(interval);
+	      callback();
+	    } else if (Date.now() - startTime >= maxTime) {
+	      clearInterval(interval);
+	      console.error('Polling exceeded maximum time limit');
+	    }
+	  }, POLLING_INTERVAL);
+	};
+
+	const hero = (id) => {
+	  const html = `
         <div class="ns-20-main-container ${id}__hero-section">
             <div class="ns-20-text-wrapper">
                 <div>
@@ -59,5 +100,23 @@ export const hero = (id) => {
             </div>
         </div>
     `;
-  return html;
-};
+	  return html;
+	};
+
+	const { ID, VARIATION } = shared$1;
+	const init = () => {
+	  const exitingHeroSection = document.querySelector('.section.hero.desktop_layout');
+	  if (!document.querySelector(`.${ID}__hero-section`)) {
+	    exitingHeroSection.insertAdjacentHTML('afterend', hero(ID));
+	  }
+	};
+	var activate = () => {
+	  setup();
+	  console.log(ID);
+	  if (VARIATION === 'control') return;
+	  init();
+	};
+
+	pollerLite(['body', '.section.hero.desktop_layout'], activate);
+
+})();
