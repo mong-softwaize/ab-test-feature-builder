@@ -1,0 +1,72 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .Section--bundle-checkout {
+      .Container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .inner {
+          @media screen and (min-width: 712px) {
+            width: calc(100% - 322px);
+            left: 0;
+          }
+        }
+
+        .#{$id}__checkboxBtn {
+          width: 222px;
+
+          .#{$id}__calculation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+
+          .#{$id}__text {
+            font-size: 16px;
+            font-family: Quarto A, Quarto B, Times New Roman, serif;
+            font-weight: 700;
+            line-height: 24px;
+            color: #3e3e41;
+            letter-spacing: 1px;
+          }
+
+          .#{$id}__price {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-left: 5px;
+            padding: 3px 0 0;
+          }
+
+          .#{$id}__sellPrice {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 20px;
+            margin-left: 5px;
+            padding: 3px 0 0;
+          }
+
+          .#{$id}__percenteage {
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 14px;
+            color: #fff;
+            background: #3e3e41;
+            padding: 2px 4px;
+            border-radius: 4px;
+            margin-left: 5px;
+          }
+
+          button {
+            width: 100%;
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+  }
+}
