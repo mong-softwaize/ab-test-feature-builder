@@ -49,7 +49,7 @@ export const hero = (id) => {
                 </h1>
                 <img src="https://storage.googleapis.com/abtest-img-bucket/NS%2341-banner-desktop.png" class="${id}__desktop-image">
                 <div class="${id}__mobile-image-wrapper">
-                    <img src="https://storage.googleapis.com/abtest-img-bucket/NS%2341-banner-mobile.png" class="${id}__mobile-image">
+                    <img src="https://storage.googleapis.com/abtest-img-bucket/NS%2341-banner-mobile-1.png" class="${id}__mobile-image">
                     <div class="custom-shape-divider-bottom">
                     </div>   
                 </div>

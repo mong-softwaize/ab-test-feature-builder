@@ -161,7 +161,6 @@ section.section.hero.hero--style-2.desktop_layout {
     font-size: 36px;
     line-height: 36px;
     text-align: center;
-    color: #000 !important;
   }
 }
 
@@ -407,18 +406,19 @@ section.section.hero.hero--style-2.desktop_layout {
           display: block;
           object-fit: cover;
           height: 100%;
-          transform: translate(-29px, 42px);
+          transform: translateY(11%);
         }
       }
 
       @media screen and (max-width: 1000px) {
         position: relative;
-        width: calc(100% + 150px);
-        margin-left: -28px;
+        width: calc(100% + 60px);
+        margin-left: -12px;
         overflow: hidden;
+        margin-top: calc(-11% + 30px);
       }
       @media screen and (max-width: 650px) {
-        width: calc(100% + 120px);
+        width: calc(100% + 24px);
         margin-left: -12px;
       }
     }
@@ -447,6 +447,11 @@ section.section.hero.hero--style-2.desktop_layout {
         padding-bottom: 10px;
         margin-bottom: 0px;
       }
+
+      @media screen and (max-width: 480px) {
+        margin: 20px 0 0;
+        padding-bottom: 0;
+      }
     }
 
     .custom-shape-divider-bottom {
@@ -455,7 +460,7 @@ section.section.hero.hero--style-2.desktop_layout {
       background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzkzIiBoZWlnaHQ9IjU4IiB2aWV3Qm94PSIwIDAgMzkzIDU4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEwMi41IDE2QzQ2Ljc3NjkgMTYgMCAxMCAwIDEwVjU4SDM5M1YxMEMzOTMgMTAgMzMzLjE3MiAwIDI4My41IDBDMjU0LjM0NiAwIDIyMS4yNjggNC4xODU2NyAxODguOTQ5IDguMjc1MzlDMTU4LjA4IDEyLjE4MTUgMTI3LjkwMyAxNiAxMDIuNSAxNloiIGZpbGw9IiNGQkY0RUYiLz4KPC9zdmc+Cg==');
       background-repeat: no-repeat;
       background-size: 100%;
-      width: 100%;
+      width: calc(100vw + 20px);
       height: 38px;
 
       @media screen and (max-width: 480px) {
@@ -511,6 +516,10 @@ section.section.hero.hero--style-2.desktop_layout {
       & {
         padding: 0px 0px 62px 28px !important;
       }
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-top: 0;
     }
   }
 }
