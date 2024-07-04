@@ -2,71 +2,135 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  &-1 {
-    .Section--bundle-checkout {
-      .Container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .inner {
-          @media screen and (min-width: 712px) {
-            width: calc(100% - 322px);
-            left: 0;
-          }
+  .Section.Section--bundle-summary {
+    .fake-container {
+      display: none;
+    }
+  }
+  .Section--bundle-checkout {
+    .Container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .inner {
+        .BundleProgressBar + div {
+          display: none;
+        }
+        @media screen and (min-width: 712px) {
+          width: calc(100% - 320px);
+          left: 0;
         }
 
-        .#{$id}__checkboxBtn {
-          width: 222px;
-
-          .#{$id}__calculation {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-          }
-
-          .#{$id}__text {
-            font-size: 16px;
-            font-family: Quarto A, Quarto B, Times New Roman, serif;
-            font-weight: 700;
-            line-height: 24px;
-            color: #3e3e41;
-            letter-spacing: 1px;
-          }
-
-          .#{$id}__price {
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 20px;
-            margin-left: 5px;
-            padding: 3px 0 0;
-          }
-
-          .#{$id}__sellPrice {
-            font-size: 12px;
-            font-weight: 700;
-            line-height: 20px;
-            margin-left: 5px;
-            padding: 3px 0 0;
-          }
-
-          .#{$id}__percenteage {
-            font-size: 10px;
-            font-weight: 700;
-            line-height: 14px;
-            color: #fff;
-            background: #3e3e41;
-            padding: 2px 4px;
-            border-radius: 4px;
-            margin-left: 5px;
-          }
-
-          button {
-            width: 100%;
-            margin-top: 12px;
-          }
+        @media screen and (max-width: 711px) {
+          width: 100%;
         }
       }
+
+      .#{$id}__checkboxBtn {
+        width: 240px;
+
+        .#{$id}__calculation {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .#{$id}__text {
+          font-size: 16px;
+          font-family: Quarto A, Quarto B, Times New Roman, serif;
+          font-weight: 700;
+          line-height: 24px;
+          color: #3e3e41;
+          letter-spacing: 1px;
+        }
+
+        .#{$id}__price {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 20px;
+          margin-left: 5px;
+          padding: 3px 0 0;
+          &.strikeThrough {
+            text-decoration: line-through;
+          }
+        }
+
+        .#{$id}__sellPrice {
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 20px;
+          margin-left: 5px;
+          padding: 3px 0 0;
+        }
+
+        .#{$id}__percenteage {
+          font-size: 10px;
+          font-weight: 700;
+          line-height: 14px;
+          color: #fff;
+          background: #3e3e41;
+          padding: 2px 4px;
+          border-radius: 4px;
+          margin-left: 5px;
+        }
+
+        & > button {
+          width: 100%;
+          font-size: 0.8rem;
+          line-height: 4;
+          padding: 0 4.2em;
+          border-radius: 0;
+          color: #fff;
+          background: #eabc85;
+          margin-top: 12px;
+        }
+
+        .#{$id}__messageContainer {
+          display: none;
+
+          @media screen and (max-width: 711px) {
+            display: block;
+          }
+        }
+
+        @media screen and (max-width: 711px) {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 711px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-2 {
+    .Container {
+      .inner {
+        width: calc(100% - 340px) !important;
+        @media screen and (max-width: 711px) {
+          width: 100% !important;
+        }
+      }
+    }
+    .#{$id}__checkboxBtn {
+      width: 280px !important;
+      & > button {
+        padding: 0 24px !important;
+        margin-top: 0 !important;
+      }
+
+      @media screen and (max-width: 711px) {
+        width: 100% !important;
+      }
+    }
+    .#{$id}__price {
+      color: #3e3e41;
+    }
+
+    .#{$id}__sellPrice {
+      color: #3e3e41;
     }
   }
 }

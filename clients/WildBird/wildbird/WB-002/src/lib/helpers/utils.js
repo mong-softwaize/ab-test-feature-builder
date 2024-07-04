@@ -31,11 +31,10 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   //configuration of the observer:
 
   const config = configObject || {
+    subtree: false,
     childList: true,
-    subtree: true,
     attributes: true,
     characterData: true,
-    characterDataOldValue: true
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -48,4 +47,18 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
   });
 
   observer.observe(target, config);
+};
+
+export const formatNumber = (num) => {
+  if (num >= 1000 || num <= -1000) {
+    return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  } else {
+    return num.toFixed(2);
+  }
+};
+
+export const calculateSellPrice = (mainPrice, percentage) => {
+  let discount = (mainPrice * percentage) / 100;
+  let price = mainPrice - discount;
+  return price;
 };
