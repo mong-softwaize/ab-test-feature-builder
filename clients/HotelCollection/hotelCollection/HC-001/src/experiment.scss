@@ -16,10 +16,6 @@
           overflow-x: auto;
         }
 
-        @include media-query(md) {
-          margin-right: -15px;
-        }
-
         .#{$id}__categoryCard {
           cursor: pointer;
 
@@ -38,11 +34,14 @@
   }
 
   &-1 {
+    .scent-accents-section {
+      display: none;
+    }
     .#{$id}__container {
       max-width: 920px;
       width: 100%;
       margin: 0 auto;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
 
       .#{$id}__title {
         font-size: 32px;
@@ -52,15 +51,15 @@
         text-align: center;
         margin: 32px 0;
         @include media-query(sm) {
-          margin: 20px 0;
+          margin: 8px 0 20px;
         }
       }
 
       .scrollable-wrapper {
-        padding: 0px 0 20px;
+        padding: 0px 0 0px;
 
         @include media-query(md) {
-          padding: 0px 0 11px 19px;
+          padding: 0px 0 0px 18px;
         }
 
         .#{$id}__categoryCards {
@@ -107,174 +106,9 @@
       @include media-query(lg) {
         max-width: 100%;
       }
-    }
-  }
 
-  &-2 {
-    .#{$id}__container {
-      margin-bottom: 8px;
-
-      .scrollable-wrapper {
-        padding: 0;
-
-        @include media-query(md) {
-          padding: 14px 0 10px 0;
-          border-top: 1px solid #e1e1e1;
-          border-bottom: 1px solid #e1e1e1;
-        }
-
-        .#{$id}__categoryCards {
-          padding: 0 0 15px 0;
-          justify-content: center;
-          gap: 35px;
-
-          @include media-query(lg) {
-            padding: 8px 0 15px 0;
-            justify-content: flex-start;
-          }
-
-          .#{$id}__categoryCard {
-            @include media-query(lg) {
-              flex: 0 0 102px;
-            }
-
-            .#{$id}__image {
-              width: 102px;
-              height: 102px;
-              border-radius: 50%;
-            }
-
-            .#{$id}__title {
-              margin: 10px 0 0 !important;
-              width: 100%;
-              text-align: center;
-              font-family: 'work-sans' !important;
-              font-size: 16px;
-              color: #202020;
-              text-decoration: underline;
-
-              @include media-query(lg) {
-                font-size: 16px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &-3 {
-    .#{$id}__wrapper {
-      display: flex;
-      margin-bottom: 24px;
-      border-bottom: 1px solid #e1e1e1;
-
-      .#{$id}__categoryWrapper {
-        flex: 1;
-
-        .#{$id}__header {
-          h1 {
-            text-align: left !important;
-          }
-        }
-
-        .#{$id}__categories {
-          .#{$id}__container {
-            margin-bottom: 8px;
-
-            .scrollable-wrapper {
-              padding: 0;
-
-              @include media-query(md) {
-                border-bottom: 1px solid #e1e1e1;
-              }
-
-              .#{$id}__categoryCards {
-                padding: 20px 0;
-                justify-content: flex-start;
-                gap: 34px;
-
-                @include media-query(md) {
-                  padding: 8px 0 20px 8px;
-                }
-
-                .#{$id}__categoryCard {
-                  @include media-query(lg) {
-                    flex: 0 0 auto;
-                  }
-
-                  .#{$id}__image {
-                    display: none;
-                  }
-
-                  .#{$id}__title {
-                    margin: 0 !important;
-                    width: 100%;
-                    font-family: 'work-sans' !important;
-                    font-size: 16px;
-                    color: #202020;
-                    text-decoration: underline;
-
-                    @include media-query(lg) {
-                      font-size: 16px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .category-info {
-        flex: 1;
-
-        @include media-query(xl) {
-          max-width: 520px;
-        }
-      }
-    }
-
-    .#{$id}__image {
-      display: none;
-    }
-
-    @include media-query(lg) {
-      .#{$id}__container {
-        margin-bottom: 8px;
-
-        .scrollable-wrapper {
-          padding: 15px 0 14px 0;
-          border-top: 1px solid #e1e1e1;
-          border-bottom: 1px solid #e1e1e1;
-
-          .#{$id}__categoryCards {
-            padding: 8px 0 14px 8px;
-            justify-content: flex-start;
-            gap: 34px;
-
-            .#{$id}__categoryCard {
-              flex: 0 0 auto;
-
-              .#{$id}__image {
-                display: none;
-              }
-
-              .#{$id}__title {
-                margin: 0 !important;
-                width: 100%;
-                font-family: 'work-sans' !important;
-                font-size: 16px;
-                color: #202020;
-                text-decoration: underline;
-
-                @include media-query(lg) {
-                  font-size: 16px;
-                }
-              }
-            }
-          }
-        }
+      @include media-query(lg) {
+        margin-bottom: 9px;
       }
     }
   }
