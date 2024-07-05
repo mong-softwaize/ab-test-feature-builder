@@ -7,8 +7,8 @@ export const categoryData = [
   },
   {
     title: 'Scent diffuser&nbsp;oils',
-    image: 'https://www.hotelcollection.com/cdn/shop/files/wirelesspro-myway.png?v=1708708169&width=640',
-    url: '',
+    image: 'https://www.hotelcollection.com/cdn/shop/files/fragranceoils.jpg?v=1690361338&width=500',
+    url: '/collections/fragrance-oil',
     alt: 'Scent diffuser oils',
   },
   {
@@ -19,7 +19,7 @@ export const categoryData = [
   },
   {
     title: 'room <br>sprays',
-    image: 'https://www.hotelcollection.com/cdn/shop/files/candles.jpg?v=1690361415&width=500',
+    image: 'https://storage.googleapis.com/abtest-img-bucket/hc-64/4.png',
     url: '/collections/room-sprays',
     alt: 'room sprays',
   },
@@ -39,7 +39,7 @@ export const categoryData = [
   },
   {
     title: 'hourglass diffuser',
-    image: 'https://www.hotelcollection.com/cdn/shop/files/Hourglass-Diffuser.png?v=1690529397&width=588',
+    image: 'https://storage.googleapis.com/abtest-img-bucket/hc-64/7.png',
     url: '/collections/hourglass-diffuser-and-oils',
     alt: 'hourglass diffuser',
   },
