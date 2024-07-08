@@ -1,5 +1,5 @@
-@import './variables';
-@import '../src/lib/shared/shared.scss';
+@import "./variables";
+@import "../src/lib/shared/shared.scss";
 
 .#{$id} {
   &__container {
@@ -11,6 +11,12 @@
       .#{$id}__categoryCards {
         display: flex;
         flex-wrap: nowrap;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         @include media-query(lg) {
           overflow-x: auto;
@@ -22,12 +28,6 @@
           .#{$id}__image {
             object-fit: cover;
           }
-
-          @include media-query(md) {
-            &:last-child {
-              margin-right: 15px;
-            }
-          }
         }
       }
     }
@@ -38,10 +38,19 @@
       display: none;
     }
     .#{$id}__container {
-      max-width: 920px;
+      // max-width: 920px;
+      padding: 0 40px;
       width: 100%;
       margin: 0 auto;
       margin-bottom: 40px;
+
+      @media (max-width: 999px) {
+        padding: 0 32px;
+      }
+
+      @media (max-width: 699px) {
+        padding: 0 20px;
+      }
 
       .#{$id}__title {
         font-size: 32px;
@@ -58,12 +67,13 @@
       .scrollable-wrapper {
         padding: 0px 0 0px;
 
-        @include media-query(md) {
-          padding: 0px 0 0px 18px;
-        }
-
         .#{$id}__categoryCards {
           justify-content: center;
+          gap: 32px;
+
+          @include media-query(lg) {
+            gap: 20px;
+          }
 
           @include media-query(lg) {
             padding: 8px 0 15px 0;
@@ -72,16 +82,8 @@
 
           .#{$id}__categoryCard {
             width: 102px;
-            &:not(:last-child) {
-              margin-right: 32px;
-
-              @include media-query(lg) {
-                margin-right: 20px;
-              }
-            }
 
             @include media-query(lg) {
-              margin-right: 20px;
               flex: 0 0 102px;
             }
 
@@ -93,7 +95,7 @@
 
             .#{$id}__title {
               font-size: 14px;
-              font-family: 'Roboto';
+              font-family: "Roboto";
               line-height: 16px;
               font-weight: 500;
               margin-top: 8px;
