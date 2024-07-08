@@ -45,6 +45,7 @@ const calculationFn = (indicator = 0) => {
 };
 
 const init = () => {
+  console.log('WB#15 is running');
   const targetPoint = document.querySelector('.Section--bundle-checkout .Container > .inner');
   if (!document.querySelector(`.${ID}__checkboxBtn`)) {
     targetPoint.insertAdjacentHTML('afterend', VARIATION === '1' ? button(ID) : buttonV2(ID));
