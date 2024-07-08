@@ -23,7 +23,7 @@ const updateDom = (percentage, oldPrice, sellPrice) => {
 };
 
 const calculationFn = (indicator = 0) => {
-  const checkoutBtn = document.querySelector('.Section.Section--bundle-summary button[type="submit"]');
+  const checkoutBtn = document.querySelector('.Section.Section--bundle-checkout button[type="submit"]');
   const oldPrice = parseFloat(checkoutBtn.innerText.toLowerCase().split('checkout: $')[1].replace(/,/g, ''));
 
   let percentage;
@@ -51,7 +51,7 @@ const init = () => {
   }
 
   const messageContainer = document.querySelector('.redo-message-container');
-  messageContainer.classList.add(`${ID}__messageContainer`);
+  messageContainer?.classList.add(`${ID}__messageContainer`);
   window[`${ID}__cloneNodeElement`] = messageContainer;
   const checkoutBtn = document.querySelector(`.${ID}__checkboxBtn button`);
   if (!checkoutBtn.querySelector(`.${ID}__messageContainer`)) {
@@ -91,7 +91,7 @@ export default () => {
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     if (target.closest(`.${ID}__Button`)) {
-      document.querySelector('.Section.Section--bundle-summary button[type="submit"]').click();
+      document.querySelector('.Section.Section--bundle-checkout button[type="submit"]').click();
     }
   });
 
