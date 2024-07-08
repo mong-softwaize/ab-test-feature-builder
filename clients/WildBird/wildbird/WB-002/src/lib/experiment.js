@@ -16,10 +16,10 @@ const updateDom = (percentage, oldPrice, sellPrice) => {
     );
   }
 
-  const checkoutBtn = document.querySelector(`.${ID}__checkboxBtn button`);
-  if (!checkoutBtn.querySelector(`.${ID}__messageContainer`)) {
-    checkoutBtn.insertAdjacentElement('afterend', window[`${ID}__cloneNodeElement`]);
-  }
+  // const checkoutBtn = document.querySelector(`.${ID}__checkboxBtn button`);
+  // if (!checkoutBtn.querySelector(`.${ID}__messageContainer`)) {
+  //   checkoutBtn.insertAdjacentElement('afterend', window[`${ID}__cloneNodeElement`]);
+  // }
 };
 
 const calculationFn = (indicator = 0) => {
@@ -50,13 +50,13 @@ const init = () => {
     targetPoint.insertAdjacentHTML('afterend', VARIATION === '1' ? button(ID) : buttonV2(ID));
   }
 
-  const messageContainer = document.querySelector('.redo-message-container');
-  messageContainer?.classList.add(`${ID}__messageContainer`);
-  window[`${ID}__cloneNodeElement`] = messageContainer;
-  const checkoutBtn = document.querySelector(`.${ID}__checkboxBtn button`);
-  if (!checkoutBtn.querySelector(`.${ID}__messageContainer`)) {
-    checkoutBtn.insertAdjacentElement('afterend', messageContainer);
-  }
+  // const messageContainer = document.querySelector('.redo-message-container');
+  // messageContainer?.classList.add(`${ID}__messageContainer`);
+  // window[`${ID}__cloneNodeElement`] = messageContainer;
+  // const checkoutBtn = document.querySelector(`.${ID}__checkboxBtn button`);
+  // if (!checkoutBtn.querySelector(`.${ID}__messageContainer`)) {
+  //   checkoutBtn.insertAdjacentElement('afterend', messageContainer);
+  // }
 
   const callBackHandler = (mutation) => {
     const { target } = mutation;
