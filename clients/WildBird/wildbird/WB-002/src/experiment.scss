@@ -13,15 +13,43 @@
       align-items: center;
       justify-content: space-between;
       .inner {
-        .BundleProgressBar + div {
-          display: none;
+        .BundleProgressBar {
+          & + div {
+            display: none;
+          }
+
+          .BundleProgressBar__list {
+            .BundleProgressBar__list__marker {
+              @media screen and (max-width: 390px) {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+          }
+
+          @media screen and (max-width: 1023px) {
+            max-width: calc(100% - 32px);
+            width: 100%;
+          }
+
+          @media screen and (max-width: 853px) {
+            max-width: calc(100% - 80px);
+          }
+
+          @media screen and (max-width: 711px) {
+            max-width: calc(100% - 48px);
+          }
+
+          @media screen and (max-width: 390px) {
+            max-width: calc(100% - 27px);
+          }
         }
-        @media screen and (min-width: 712px) {
+        @media screen and (min-width: 1024px) {
           width: calc(100% - 320px);
           left: 0;
         }
 
-        @media screen and (max-width: 711px) {
+        @media screen and (max-width: 1023px) {
           width: 100%;
         }
       }
@@ -94,12 +122,17 @@
           }
         }
 
-        @media screen and (max-width: 711px) {
+        @media screen and (max-width: 1023px) {
           width: 100%;
+          margin-top: 62px;
+        }
+
+        @media screen and (max-width: 711px) {
+          margin-top: 45px;
         }
       }
 
-      @media screen and (max-width: 711px) {
+      @media screen and (max-width: 1023px) {
         flex-direction: column;
       }
     }
@@ -109,7 +142,7 @@
     .Container {
       .inner {
         width: calc(100% - 340px) !important;
-        @media screen and (max-width: 711px) {
+        @media screen and (max-width: 1023px) {
           width: 100% !important;
         }
       }
@@ -121,7 +154,7 @@
         margin-top: 0 !important;
       }
 
-      @media screen and (max-width: 711px) {
+      @media screen and (max-width: 1023px) {
         width: 100% !important;
       }
     }

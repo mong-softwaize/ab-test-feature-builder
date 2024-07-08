@@ -3,6 +3,7 @@ import gaTracking from './services/gaTracking';
 import shared from './shared/shared';
 import { calculateSellPrice, observeDOM, pollerLite } from './helpers/utils';
 import { button, buttonV2 } from './components/button';
+import freeShipping from './components/freeShipping';
 
 const { ID, VARIATION } = shared;
 
@@ -59,6 +60,13 @@ const init = () => {
   //   checkoutBtn.insertAdjacentElement('afterend', messageContainer);
   // }
 
+  const bundleList = document.querySelector('.Section.Section--bundle-checkout .BundleProgressBar__list');
+  bundleList?.querySelectorAll('.BundleProgressBar__list__marker').forEach((item, index) => {
+    if (!item.querySelector(`.${ID}__freeShipping`) && index > 0) {
+      item.querySelector('span').insertAdjacentHTML('beforebegin', freeShipping(ID));
+    }
+  });
+
   const callBackHandler = (mutation) => {
     const { target } = mutation;
 
@@ -78,7 +86,7 @@ const init = () => {
         });
 
       calculationFn(index);
-    }, 1000);
+    }, 500);
   };
 
   observeDOM('.Section.Section--bundle-summary .Loop', callBackHandler);
