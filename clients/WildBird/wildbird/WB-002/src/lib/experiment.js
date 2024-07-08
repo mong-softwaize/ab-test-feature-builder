@@ -34,7 +34,6 @@ const calculationFn = (indicator = 0) => {
   } else if (indicator === 2) {
     percentage = '10% OFF';
     sellPrice = calculateSellPrice(oldPrice, 10);
-    console.log(sellPrice, 'sellPrice');
   } else if (indicator === 3) {
     percentage = '15% OFF';
     sellPrice = calculateSellPrice(oldPrice, 15);
@@ -51,7 +50,7 @@ const init = () => {
     targetPoint.insertAdjacentHTML('afterend', VARIATION === '1' ? button(ID) : buttonV2(ID));
   }
 
-  const messageContainer = targetPoint.querySelector('.redo-message-container');
+  const messageContainer = document.querySelector('.redo-message-container');
   messageContainer.classList.add(`${ID}__messageContainer`);
   window[`${ID}__cloneNodeElement`] = messageContainer;
   const checkoutBtn = document.querySelector(`.${ID}__checkboxBtn button`);
