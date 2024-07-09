@@ -1,5 +1,5 @@
-@import "./variables";
-@import "../src/lib/shared/shared.scss";
+@import './variables';
+@import '../src/lib/shared/shared.scss';
 
 .#{$id} {
   &__container {
@@ -75,7 +75,19 @@
             gap: 20px;
           }
 
-          @include media-query(lg) {
+          @media screen and (max-width: 450px) {
+            gap: 15px;
+          }
+
+          @include media-query(xsm) {
+            gap: 10px;
+          }
+
+          @media screen and (max-width: 360px) {
+            gap: 6px;
+          }
+
+          @include media-query(xlg) {
             padding: 8px 0 15px 0;
             justify-content: flex-start;
           }
@@ -87,6 +99,14 @@
               flex: 0 0 102px;
             }
 
+            @include media-query(xsm) {
+              flex: 0 0 95px;
+            }
+
+            @media screen and (max-width: 360px) {
+              flex: 0 0 90px;
+            }
+
             .#{$id}__image {
               height: 102px;
               width: 100%;
@@ -95,7 +115,7 @@
 
             .#{$id}__title {
               font-size: 14px;
-              font-family: "Roboto";
+              font-family: 'Roboto';
               line-height: 16px;
               font-weight: 500;
               margin-top: 8px;
