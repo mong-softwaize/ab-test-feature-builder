@@ -1,0 +1,150 @@
+.HC-001__container {
+  width: 100%;
+}
+.HC-001__container .scrollable-wrapper {
+  width: 100%;
+}
+.HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+.HC-001__container .scrollable-wrapper .HC-001__categoryCards::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+    overflow-x: auto;
+  }
+}
+.HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard {
+  cursor: pointer;
+}
+.HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard .HC-001__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.HC-001-1 .scent-accents-section {
+  display: none;
+}
+.HC-001-1 .HC-001__container {
+  padding: 0 40px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+@media (max-width: 999px) {
+  .HC-001-1 .HC-001__container {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 699px) {
+  .HC-001-1 .HC-001__container {
+    padding: 0 20px;
+  }
+}
+.HC-001-1 .HC-001__container .HC-001__title {
+  font-size: 32px;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  margin: 32px 0;
+}
+@media screen and (max-width: 768px) {
+  .HC-001-1 .HC-001__container .HC-001__title {
+    margin: 8px 0 20px;
+  }
+}
+.HC-001-1 .HC-001__container .scrollable-wrapper {
+  padding: 0px 0 0px;
+}
+.HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+    gap: 12px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards {
+    padding: 8px 0 15px 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+.HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 102px;
+  gap: 8px;
+}
+.HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard .HC-001__image {
+  max-width: 102px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+@media screen and (max-width: 768px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard .HC-001__image {
+    max-width: 90px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard .HC-001__image {
+    max-width: 80px;
+  }
+}
+.HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard .HC-001__title {
+  font-size: 14px;
+  font-family: "Roboto";
+  line-height: 16px;
+  font-weight: 500;
+  margin-top: auto;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 390px) {
+  .HC-001-1 .HC-001__container .scrollable-wrapper .HC-001__categoryCards .HC-001__categoryCard .HC-001__title {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .HC-001-1 .HC-001__container {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .HC-001-1 .HC-001__container {
+    margin-bottom: 9px;
+  }
+}

@@ -72,19 +72,15 @@
           gap: 32px;
 
           @include media-query(lg) {
-            gap: 20px;
+            gap: 24px;
           }
 
           @media screen and (max-width: 450px) {
-            gap: 15px;
+            gap: 16px;
           }
 
           @include media-query(xsm) {
-            gap: 10px;
-          }
-
-          @media screen and (max-width: 360px) {
-            gap: 6px;
+            gap: 12px;
           }
 
           @include media-query(xlg) {
@@ -93,24 +89,27 @@
           }
 
           .#{$id}__categoryCard {
-            width: 102px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 102px;
+            gap: 8px;
 
-            @include media-query(lg) {
-              flex: 0 0 102px;
-            }
 
-            @include media-query(xsm) {
-              flex: 0 0 95px;
-            }
-
-            @media screen and (max-width: 360px) {
-              flex: 0 0 90px;
-            }
 
             .#{$id}__image {
-              height: 102px;
-              width: 100%;
+              max-width: 102px;
               border-radius: 50%;
+              aspect-ratio: 1;
+
+              @include media-query(sm) {
+                max-width: 90px;
+              }
+
+              @include media-query(xsm) {
+                max-width: 80px;
+              }
             }
 
             .#{$id}__title {
@@ -118,9 +117,13 @@
               font-family: 'Roboto';
               line-height: 16px;
               font-weight: 500;
-              margin-top: 8px;
+              margin-top: auto;
               margin-bottom: 0;
               text-transform: uppercase;
+
+              @include media-query(xsm) {
+                font-size: 13px;
+              }
             }
           }
         }

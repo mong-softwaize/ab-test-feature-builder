@@ -1,0 +1,174 @@
+.WB-002 .Section.Section--bundle-summary .fake-container {
+  display: none;
+}
+.WB-002 .Section--bundle-checkout .Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.WB-002 .Section--bundle-checkout .Container .inner .BundleProgressBar + div {
+  display: none;
+}
+@media screen and (max-width: 390px) {
+  .WB-002 .Section--bundle-checkout .Container .inner .BundleProgressBar .BundleProgressBar__list .BundleProgressBar__list__marker {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .WB-002 .Section--bundle-checkout .Container .inner .BundleProgressBar {
+    max-width: calc(100% - 32px);
+    width: 100%;
+  }
+}
+@media screen and (max-width: 853px) {
+  .WB-002 .Section--bundle-checkout .Container .inner .BundleProgressBar {
+    max-width: calc(100% - 80px);
+  }
+}
+@media screen and (max-width: 711px) {
+  .WB-002 .Section--bundle-checkout .Container .inner .BundleProgressBar {
+    max-width: calc(100% - 48px);
+  }
+}
+@media screen and (max-width: 390px) {
+  .WB-002 .Section--bundle-checkout .Container .inner .BundleProgressBar {
+    max-width: calc(100% - 27px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .WB-002 .Section--bundle-checkout .Container .inner {
+    width: calc(100% - 320px);
+    left: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .WB-002 .Section--bundle-checkout .Container .inner {
+    width: 100%;
+  }
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn {
+  width: 240px;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__calculation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__text {
+  font-size: 16px;
+  font-family: Quarto A, Quarto B, Times New Roman, serif;
+  font-weight: 700;
+  line-height: 24px;
+  color: #3e3e41;
+  letter-spacing: 1px;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__price {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 5px;
+  padding: 3px 0 0;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__price.strikeThrough {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__sellPrice {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-left: 5px;
+  padding: 3px 0 0;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__percenteage {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  color: #fff;
+  background: #3e3e41;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn > button {
+  width: 100%;
+  font-size: 0.8rem;
+  line-height: 4;
+  padding: 0 4.2em;
+  border-radius: 0;
+  color: #fff;
+  background: #eabc85;
+  margin-top: 12px;
+}
+.WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__messageContainer {
+  display: none;
+}
+@media screen and (max-width: 711px) {
+  .WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn .WB-002__messageContainer {
+    display: block;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn {
+    width: 100%;
+    margin-top: 62px;
+  }
+}
+@media screen and (max-width: 711px) {
+  .WB-002 .Section--bundle-checkout .Container .WB-002__checkboxBtn {
+    margin-top: 45px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .WB-002 .Section--bundle-checkout .Container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.WB-002-2 .Container .inner {
+  width: calc(100% - 340px) !important;
+}
+@media screen and (max-width: 1023px) {
+  .WB-002-2 .Container .inner {
+    width: 100% !important;
+  }
+}
+.WB-002-2 .WB-002__checkboxBtn {
+  width: 280px !important;
+}
+.WB-002-2 .WB-002__checkboxBtn > button {
+  padding: 0 24px !important;
+  margin-top: 0 !important;
+}
+@media screen and (max-width: 1023px) {
+  .WB-002-2 .WB-002__checkboxBtn {
+    width: 100% !important;
+  }
+}
+.WB-002-2 .WB-002__price {
+  color: #3e3e41;
+}
+.WB-002-2 .WB-002__sellPrice {
+  color: #3e3e41;
+}
