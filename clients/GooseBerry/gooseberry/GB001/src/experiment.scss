@@ -1,0 +1,29 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  &-1 {
+    .#{$id}__dropdownWrapper {
+      position: relative;
+      width: 180px;
+      .model-size-dropdown {
+        top: 0;
+        left: 0;
+        margin-top: var(--spacing-2);
+        transform: none;
+
+        .model-size-dropdown-content {
+          p {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  &-2 {
+    .model-size-dropdown {
+      display: none;
+    }
+  }
+}
