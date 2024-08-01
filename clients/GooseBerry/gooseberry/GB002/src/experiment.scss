@@ -1,0 +1,66 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .#{$id}__categoriesWrapper {
+    margin: 20px 0 0 var(--space-outer);
+    h1 {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 3%;
+      color: #151515;
+      margin-bottom: 16px;
+    }
+
+    .#{$id}__categoriesContainer {
+      display: flex;
+      overflow-x: scroll;
+      .#{$id}__categoryItem {
+        .#{$id}__imageWrapper {
+          width: 104px;
+          height: 104px;
+          border-radius: 50%;
+          background-color: #fff;
+
+          @media screen and (max-width: 360px) {
+            width: 95px;
+            height: 95px;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        h2 {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 3%;
+          color: #151515;
+          margin-top: 8px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+        & + a {
+          margin-right: 8px;
+        }
+
+        &:first-child {
+          margin-right: 8px;
+        }
+
+        &:last-child {
+          //margin-right: 0;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

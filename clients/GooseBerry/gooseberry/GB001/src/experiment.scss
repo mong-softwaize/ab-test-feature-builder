@@ -4,12 +4,15 @@
 .#{$id} {
   &-1 {
     .#{$id}__dropdownWrapper {
-      position: relative;
-      width: 180px;
+      .#{$id}__dropdownContainer {
+        position: relative;
+        height: 54px;
+      }
+
       .model-size-dropdown {
         top: 0;
         left: 0;
-        margin-top: var(--spacing-2);
+        margin-top: 24px;
         transform: none;
 
         .model-size-dropdown-content {
@@ -17,6 +20,10 @@
             text-align: left;
           }
         }
+      }
+
+      & + .js-enabled.product__option {
+        margin-top: 24px;
       }
     }
   }
