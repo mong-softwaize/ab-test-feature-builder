@@ -7,13 +7,13 @@ const { ID, VARIATION } = shared;
 
 const init = () => {
   if (VARIATION === '1') {
-    const customDropdown = `<div class="${ID}__dropdownWrapper"></div>`;
-    const targetPoint = document.querySelector('.product__color-chips');
+    const customDropdown = `<div class="${ID}__dropdownWrapper"><div class="${ID}__dropdownContainer"></div></div>`;
+    const targetPoint = document.querySelector('.js-enabled.product__option');
     const controlModal = document.querySelector('.model-size-dropdown');
     if (!document.querySelector(`.${ID}__dropdownWrapper`)) {
-      targetPoint.insertAdjacentHTML('beforeend', customDropdown);
+      targetPoint.insertAdjacentHTML('afterend', customDropdown);
     }
-    document.querySelector(`.${ID}__dropdownWrapper`).append(controlModal);
+    document.querySelector(`.${ID}__dropdownContainer`).append(controlModal);
   }
 };
 
