@@ -39,7 +39,7 @@ export const hero = (id) => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div>
                 <h1 class="header-main-message small">
@@ -47,11 +47,11 @@ export const hero = (id) => {
                     <strong>Reach your goals</strong>
                     <span>and stay there</span>
                 </h1>
-                <img src="https://storage.googleapis.com/abtest-img-bucket/NS%2341-banner-desktop.png" class="${id}__desktop-image">
+                <img src="https://storage.googleapis.com/abtest-img-bucket/ns41-v4-banner-desktop-2x.png" class="${id}__desktop-image">
                 <div class="${id}__mobile-image-wrapper">
-                    <img src="https://storage.googleapis.com/abtest-img-bucket/NS%2341-banner-mobile-1.png" class="${id}__mobile-image">
+                    <img src="https://storage.googleapis.com/abtest-img-bucket/ns41-v4-banner-mobile-2x.png" class="${id}__mobile-image">
                     <div class="custom-shape-divider-bottom">
-                    </div>   
+                    </div>
                 </div>
             </div>
         </div>
