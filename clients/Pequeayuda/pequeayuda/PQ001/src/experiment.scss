@@ -142,6 +142,10 @@
         display: none;
       }
     }
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 
   .#{$id}__bannerWrapper {
@@ -214,6 +218,10 @@
         right: 40px;
       }
     }
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 
   .#{$id}__uspsContainer {
@@ -259,6 +267,10 @@
           margin-right: 10px;
         }
       }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: none;
     }
   }
 }
