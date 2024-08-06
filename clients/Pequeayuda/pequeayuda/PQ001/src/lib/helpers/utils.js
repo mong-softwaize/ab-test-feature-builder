@@ -32,10 +32,10 @@ export const observeDOM = (targetSelectorString, callbackFunction, configObject)
 
   const config = configObject || {
     childList: true,
-    subtree: true,
+    subtree: false,
     attributes: true,
-    characterData: true,
-    characterDataOldValue: true,
+    characterData: false,
+    characterDataOldValue: false,
   };
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
@@ -59,5 +59,4 @@ export const initSwiper = (id) => {
       prevEl: '.swiper-button-prev',
     },
   });
-  console.log('🚀 ~ initSwiper ~ swiper:', swiper);
 };

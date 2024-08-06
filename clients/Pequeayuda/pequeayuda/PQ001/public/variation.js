@@ -38,8 +38,27 @@
 	    }
 	  }, POLLING_INTERVAL);
 	};
+	const observeDOM = (targetSelectorString, callbackFunction, configObject) => {
+	  const target = document.querySelector(`${targetSelectorString}`);
+	  if (!target) return;
+	  const config = configObject || {
+	    childList: true,
+	    subtree: false,
+	    attributes: true,
+	    characterData: false,
+	    characterDataOldValue: false,
+	  };
+	  const observer = new MutationObserver((mutations) => {
+	    mutations.forEach((mutation) => {
+	      observer.disconnect();
+	      callbackFunction(mutation);
+	      observer.observe(target, config);
+	    });
+	  });
+	  observer.observe(target, config);
+	};
 	const initSwiper = (id) => {
-	  const swiper = new window.Swiper(`.${id}__swiper`, {
+	  new window.Swiper(`.${id}__swiper`, {
 	    slidesPerView: 1,
 	    spaceBetween: 30,
 	    loop: true,
@@ -48,7 +67,6 @@
 	      prevEl: '.swiper-button-prev',
 	    },
 	  });
-	  console.log('🚀 ~ initSwiper ~ swiper:', swiper);
 	};
 
 	const cartIcon = `
@@ -98,7 +116,7 @@
 	const categoryData = [
 	  {
 	    name: 'Extractores',
-	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2023/12/extractores-home-1.jpg',
+	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/4.jpg',
 	    link: '/extractores-electricos/',
 	  },
 	  {
@@ -108,27 +126,27 @@
 	  },
 	  {
 	    name: 'Pañales',
-	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2023/12/panales-home-1.jpg',
+	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/1-1.jpg',
 	    link: '/categoria-producto/panales/',
 	  },
 	  {
 	    name: 'Pañitos Húmedos',
-	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2023/12/extractores-home-1.jpg',
+	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/3.jpg',
 	    link: '/categoria-producto/toallas-humedas/',
 	  },
 	  {
 	    name: 'Regalos para bebés',
-	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/3.jpg',
+	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/5.jpg',
 	    link: '/etiqueta-producto/exclusivo/',
 	  },
 	  {
 	    name: 'Biberóns',
-	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2023/12/panales-home-1.jpg',
+	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/6.jpg',
 	    link: '/categoria-producto/biberon/',
 	  },
 	  {
 	    name: 'Artículos para bebés',
-	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2023/12/panales-home-1.jpg',
+	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/7.jpg',
 	    link: '/categoria-producto/basicos-para-bebes/',
 	  },
 	];
@@ -138,35 +156,35 @@
 	    header: 'Dale a tu bebé el mejor comienzo',
 	    subHeader: 'Combinaciones perfectas para las necesidades únicas de tu bebé',
 	    btnText: 'Explora tus opciones',
-	    btnLink: '',
+	    btnLink: '/categoria-producto/suplemento/',
 	  },
 	  {
 	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/Depositphotos_38182141_s.jpg',
 	    header: 'Nutre el crecimiento de tu bebé',
 	    subHeader: 'La salud de tu bebé comienza con las mejores fórmulas',
 	    btnText: 'Mira las opciones',
-	    btnLink: '',
+	    btnLink: '/categoria-producto/formulas/',
 	  },
 	  {
 	    imageUrl: 'https://pequeayuda.com/wp-content/uploads/2024/08/close-up-parent-playing-with-his-baby-scaled.jpg',
 	    header: 'Pañales cómodos para tu bebé',
-	    subHeader: 'Protege a tu bebé contra las escaldaduras',
+	    subHeader: 'Combinaciones perfectas para las necesidades únicas de tu bebé',
 	    btnText: 'Elige tu preferido',
-	    btnLink: '',
+	    btnLink: '/categoria-producto/panales/',
 	  },
 	];
 	const uspsWrapperData = [
 	  {
 	    icon: coverage,
-	    text: '<span>Coverage<br/><span class="PQ001__text">300+ cities</span></span>',
+	    text: '<span>Cobertura en<br/><span class="PQ001__text">300+ ciudades</span></span>',
 	  },
 	  {
 	    icon: delivery,
-	    text: '<span>Delivery in<br/><span class="PQ001__text">24 - 48 hr</span></span>',
+	    text: '<span>Entrega aprox<br/><span class="PQ001__text">24 a 48 horas</span></span>',
 	  },
 	  {
 	    icon: returnIcon,
-	    text: '<span>Return<br/><span class="PQ001__text">No cost</span></span>',
+	    text: '<span>Devolución<br/><span class="PQ001__text">sin costo</span></span>',
 	  },
 	];
 
@@ -224,27 +242,34 @@
 
 	const { ID, VARIATION } = shared$1;
 	const init = () => {
+	  const headerOnly = document.querySelector('div[data-elementor-type="header"]');
 	  const header = document.querySelector('div[data-elementor-type="header"] > div[data-element_type="container"]:last-child');
 	  header.classList.add(`${ID}__header`);
-	  const mainElement = header.closest('div[data-elementor-type="header"]');
-	  console.log('mainElement', mainElement);
+	  header.closest('div[data-elementor-type="header"]');
 	  if (!header.querySelector(`.${ID}__cartIcon`)) {
 	    pollerLite(['.elementor-hidden-desktop .elementor-button-icon > .elementor-button-icon-qty'], () => {
 	      header.querySelector('.elementor-button-icon > .elementor-button-icon-qty').insertAdjacentHTML('afterend', cartIcon);
 	    });
 	  }
 	  if (!document.querySelector(`.${ID}__categoriesWrapper`)) {
-	    mainElement.insertAdjacentHTML('beforeend', categories(ID, categoryData));
+	    headerOnly.insertAdjacentHTML('afterend', categories(ID, categoryData));
 	  }
 	  if (!document.querySelector(`.${ID}__bannerWrapper`)) {
 	    pollerLite([() => typeof window.Swiper === 'function'], () => {
-	      mainElement.insertAdjacentHTML('beforeend', bannerWrapper(ID, bannerData));
+	      document.querySelector(`.${ID}__categoriesWrapper`).insertAdjacentHTML('afterend', bannerWrapper(ID, bannerData));
 	      initSwiper(ID);
 	      if (!document.querySelector(`.${ID}__uspsContainer`)) {
-	        mainElement.insertAdjacentHTML('beforeend', uspsWrapper(ID, uspsWrapperData));
+	        document.querySelector(`.${ID}__bannerWrapper`).insertAdjacentHTML('afterend', uspsWrapper(ID, uspsWrapperData));
 	      }
 	    });
 	  }
+	  observeDOM('div[data-elementor-type="header"] .elementor-menu-cart__toggle_wrapper', (mutation) => {
+	    if (!header.querySelector(`.${ID}__cartIcon`)) {
+	      pollerLite(['.elementor-hidden-desktop .elementor-button-icon > .elementor-button-icon-qty'], () => {
+	        header.querySelector('.elementor-button-icon > .elementor-button-icon-qty').insertAdjacentHTML('afterend', cartIcon);
+	      });
+	    }
+	  });
 	};
 	var activate = () => {
 	  setup();
@@ -252,6 +277,8 @@
 	  init();
 	};
 
-	pollerLite(['body', '.home.page-template', 'div[data-elementor-type="header"]'], activate);
+	pollerLite(['body', '.home.page-template', 'div[data-elementor-type="header"]'], () => {
+	  setTimeout(activate, 1000);
+	});
 
 })();
