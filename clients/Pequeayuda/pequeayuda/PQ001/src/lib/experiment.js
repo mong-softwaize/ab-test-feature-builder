@@ -17,7 +17,9 @@ const init = () => {
   console.log('mainElement', mainElement);
 
   if (!header.querySelector(`.${ID}__cartIcon`)) {
-    header.querySelector('.elementor-button-icon > .elementor-button-icon-qty').insertAdjacentHTML('afterend', cartIcon);
+    pollerLite(['.elementor-hidden-desktop .elementor-button-icon > .elementor-button-icon-qty'], () => {
+      header.querySelector('.elementor-button-icon > .elementor-button-icon-qty').insertAdjacentHTML('afterend', cartIcon);
+    });
   }
 
   //category section
@@ -40,7 +42,6 @@ const init = () => {
 
 export default () => {
   setup(); //use if needed
-  console.log(ID);
 
   if (VARIATION === 'Control') return;
 
