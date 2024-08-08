@@ -1,0 +1,33 @@
+@import './variables';
+@import '../src/lib/shared/shared.scss';
+
+.#{$id} {
+  .elementor-widget-woocommerce-product-content {
+    & + div {
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  img[src="https://pequeayuda.com/wp-content/uploads/2023/12/Frame-640-1.png"]:not(.#{$id}__uspsPdpImage)
+  {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  .#{$id}__uspsPdp {
+    margin-bottom: 15px;
+    border-top: 6px solid #0000001a;
+    border-bottom: 6px solid #0000001a;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}

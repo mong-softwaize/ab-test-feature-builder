@@ -1,0 +1,28 @@
+.PQ002 .elementor-widget-woocommerce-product-content + div {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .PQ002 .elementor-widget-woocommerce-product-content + div {
+    display: block;
+  }
+}
+.PQ002 img[src="https://pequeayuda.com/wp-content/uploads/2023/12/Frame-640-1.png"]:not(.PQ002__uspsPdpImage) {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .PQ002 img[src="https://pequeayuda.com/wp-content/uploads/2023/12/Frame-640-1.png"]:not(.PQ002__uspsPdpImage) {
+    display: block;
+  }
+}
+.PQ002 .PQ002__uspsPdp {
+  margin-bottom: 15px;
+  border-top: 6px solid rgba(0, 0, 0, 0.1019607843);
+  border-bottom: 6px solid rgba(0, 0, 0, 0.1019607843);
+  width: calc(100% + 20px);
+  margin-left: -10px;
+}
+@media screen and (min-width: 768px) {
+  .PQ002 .PQ002__uspsPdp {
+    display: none;
+  }
+}
