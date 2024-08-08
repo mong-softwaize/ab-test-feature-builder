@@ -1,32 +1,32 @@
 export const categoryData = [
   {
     name: 'Bras',
-    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/bras.png',
+    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/v1/bras.png',
     link: '/collections/shop-bras',
   },
   {
     name: 'Panties',
-    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/panties.png',
+    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/v1/panties.png',
     link: '/collections/shop-briefs-intimates',
   },
   {
     name: 'swimwear',
-    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/swimwear.png',
+    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/v1/swimwear.png',
     link: '/collections/shop-all-swimwear',
   },
   {
     name: 'lingerie',
-    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/lingerie.png',
+    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/v1/lingerie.png',
     link: '/collections/shop-all-intimates',
   },
   {
     name: 'clothing',
-    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/clothing.png',
+    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/v1/clothing.png',
     link: '/collections/clothing',
   },
   {
     name: 'lounge',
-    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/lounge.png',
+    imageUrl: 'https://storage.googleapis.com/abtest-img-bucket/gby-8/v1/lounge.png',
     link: '/collections/shop-loungewear',
   },
 ];
