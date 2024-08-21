@@ -21,6 +21,9 @@
   width: calc(100% + 20px);
   margin-left: -10px;
 }
+.PQ002 .PQ002__uspsPdp .PQ002__widget-container {
+  margin-left: -5px;
+}
 @media screen and (min-width: 768px) {
   .PQ002 .PQ002__uspsPdp {
     display: none;
