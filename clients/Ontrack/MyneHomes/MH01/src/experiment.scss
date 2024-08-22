@@ -286,7 +286,7 @@
 
   &[lang='de'] {
     .#{$id}__gridWrapper {
-      .relative.w-full {
+      .relative.w-full.scroll-mt-head-s {
         & > div:not(.w-full) {
           padding-top: 15px;
           & > .mb-5 {
@@ -364,6 +364,44 @@
             & > div:nth-child(3) {
               margin-top: 12px;
               order: 10;
+
+              label.typo-label {
+                p {
+                  font-size: 0;
+                  &::before {
+                    content: 'Ich stimme der';
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    text-align: left;
+                    color: #646464;
+                  }
+
+                  &::after {
+                    content: 'zu und damit einverstanden, von MYNE per E-Mail oder Telefon für Fragen oder zu Informationszwecken kontaktiert zu werden.*';
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    text-align: left;
+                    color: #646464;
+                  }
+
+                  a {
+                    font-size: 0;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    &::after {
+                      content: 'Datenschutzerklärung';
+                      font-size: 14px;
+                      font-weight: 400;
+                      line-height: 20px;
+                      text-align: left;
+                      color: #646464;
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
             }
 
             // & > .w-full.mt-6:not(.p-[5px]) {
@@ -454,6 +492,43 @@
             & > div:nth-child(3) {
               margin-top: 12px;
               order: 10;
+              label.typo-label {
+                p {
+                  font-size: 0;
+                  &::before {
+                    content: 'I agree to the';
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    text-align: left;
+                    color: #646464;
+                  }
+
+                  &::after {
+                    content: 'declaration and being contacted by MYNE by email or phone for questions or for information purposes.*';
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    text-align: left;
+                    color: #646464;
+                  }
+
+                  a {
+                    font-size: 0;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    &::after {
+                      content: 'data protection';
+                      font-size: 14px;
+                      font-weight: 400;
+                      line-height: 20px;
+                      text-align: left;
+                      color: #646464;
+                      text-decoration: underline;
+                    }
+                  }
+                }
+              }
             }
 
             // & > .w-full.mt-6:not(.p-[5px]) {
