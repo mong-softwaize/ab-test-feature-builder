@@ -5,7 +5,7 @@ import { onUrlChange, pollerLite } from './helpers/utils';
 import element from './components/element';
 
 const { ID, VARIATION } = shared;
-const DOM_INTERVAL = 2000;
+const DOM_INTERVAL = 500;
 const HIGHLIGHT_THRESHOLD = 4;
 
 const collectInformation = () => {
