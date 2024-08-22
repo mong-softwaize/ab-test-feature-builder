@@ -47,7 +47,7 @@
                 <div class="elementor-element elementor-widget elementor-widget-image"
                     data-element_type="widget"
                     data-widget_type="image.default">
-                    <div class="elementor-widget-container">
+                    <div class="elementor-widget-container ${id}__widget-container">
                         <img width="300"
                             height="96"
                             src="https://pequeayuda.com/wp-content/uploads/2023/12/Frame-640-1.png"
