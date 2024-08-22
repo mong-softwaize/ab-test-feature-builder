@@ -20,7 +20,7 @@ const collectInformation = () => {
 
   const highlightsWrapper = document.querySelector('[data-ontrack-id="property-highlights-list"]');
   const collectHighlightInfo = Array.from(highlightsWrapper.querySelectorAll('.grid')).map((item, index) => {
-    if (index <= 4) {
+    if (index <= HIGHLIGHT_THRESHOLD) {
       return item.cloneNode(true);
     }
   });
@@ -33,12 +33,15 @@ const collectInformation = () => {
     price,
     perShare,
     collectHighlightInfo,
+    title: window.location.pathname.includes('/de/')
+      ? 'inkl. Kaufkosten, Upgrades und Ausstattung'
+      : 'incl. purchase costs, upgrades and equipment',
   };
 };
 
 const init = () => {
-  if (document.querySelector(`.${ID}__element`)) {
-    document.querySelector(`.${ID}__element`).remove();
+  if (document.querySelector(`.${ID}__elementWrapper`)) {
+    document.querySelector(`.${ID}__elementWrapper`).remove();
   }
 
   const info = collectInformation();
@@ -58,9 +61,9 @@ export default () => {
 
       if (target.closest('button[data-ontrack-id="request-expose-button"]')) {
         pollerLite(['#headlessui-portal-root .grid-flow-row', `#headlessui-portal-root input[value="${submitValue}"]`], () => {
-          const modalWrapper = document.querySelector('#headlessui-portal-root .grid-flow-row');
+          const modalWrapper = document.querySelector('#headlessui-portal-root');
           modalWrapper.classList.add(`${ID}__modalWrapper`);
-          const element = document.querySelector(`.${ID}__element`);
+          const element = document.querySelector(`.${ID}__elementWrapper`);
           const cloneElement = element.cloneNode(true);
           const mainContainer = document.querySelector('#headlessui-portal-root .grid-flow-row');
           mainContainer.insertAdjacentElement('beforeend', cloneElement);

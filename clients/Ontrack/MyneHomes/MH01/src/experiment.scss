@@ -2,8 +2,25 @@
 @import '../src/lib/shared/shared.scss';
 
 .#{$id} {
-  .#{$id}__modalWrapper {
+  body > .#{$id}__elementWrapper {
+    display: none;
   }
+
+  .#{$id}__modalWrapper {
+    .grid-flow-row {
+      grid-template-columns: minmax(0, 484px) minmax(0, 338px);
+      padding: 40px 38px 40px 40px;
+      grid-gap: 56px;
+      .px-4.pt-10 {
+        padding: 0;
+      }
+    }
+    .#{$id}__elementWrapper {
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px 0px #0000001f;
+    }
+  }
+
   .#{$id}__element {
     animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
