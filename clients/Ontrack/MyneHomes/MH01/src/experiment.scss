@@ -539,4 +539,24 @@
       }
     }
   }
+
+  .MH01__modalWrapper {
+    form:not([class]) {
+      input:not(.btn-primary-light):not([type='checkbox']) {
+        height: 60px;
+        border: 1px solid #06213d1a;
+
+        + label {
+          top: 1.25rem;
+        }
+
+        &:focus,
+        &:not(:placeholder-shown) {
+          & + label {
+            top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
