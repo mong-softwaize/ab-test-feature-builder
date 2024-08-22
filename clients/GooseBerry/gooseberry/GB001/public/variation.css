@@ -1,0 +1,20 @@
+.GB001-1 .GB001__dropdownWrapper .GB001__dropdownContainer {
+  position: relative;
+  height: 54px;
+}
+.GB001-1 .GB001__dropdownWrapper .model-size-dropdown {
+  top: 0;
+  left: 0;
+  margin-top: 24px;
+  -webkit-transform: none;
+          transform: none;
+}
+.GB001-1 .GB001__dropdownWrapper .model-size-dropdown .model-size-dropdown-content p {
+  text-align: left;
+}
+.GB001-1 .GB001__dropdownWrapper + .js-enabled.product__option {
+  margin-top: 24px;
+}
+.GB001-2 .model-size-dropdown {
+  display: none;
+}
