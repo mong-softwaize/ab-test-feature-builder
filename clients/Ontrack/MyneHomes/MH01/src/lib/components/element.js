@@ -1,9 +1,12 @@
 export const element = (id, info) => {
   console.log('info', info);
+
+  const formtTitle = window.location.pathname.includes('/de/') ? 'Mehr Informationen erhalten' : 'Get more information';
   const { imageSrc, locationName, hotelName, pillsBox, price, perShare, collectHighlightInfo, title } = info;
 
   const html = `<div class="${id}__elementWrapper">
     <div class="${id}__elementContainer">
+      <div class="${id}__element-title">${formtTitle}</div>
       <div class="${id}__elementContainer-mainSection">
         <div class="${id}__elementContainer-imageWrapper">
           <div class="${id}__elementContainer-image">
@@ -16,11 +19,14 @@ export const element = (id, info) => {
         <div class="${id}__elementContainer-content">
           <p>${locationName}</p>
           <h2>${hotelName}</h2>
-          <div>
-            <span>${price}</span>
-            <span>${perShare}</span>
+          <div class="${id}__priceWarpper">
+            <span class="perSharePrice">${price}</span>
+            <span class="perShareText">${perShare}</span>
           </div>
           <h5>${title}</h5>
+          <div class="${id}__pileBox">
+              ${pillsBox.outerHTML}
+          </div>
         </div>
       </div>
         ${

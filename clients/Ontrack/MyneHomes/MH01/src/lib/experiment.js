@@ -19,11 +19,9 @@ const collectInformation = () => {
   const perShare = priceWrapper.querySelector('.flex-col > div.typo-body')?.textContent.trim().replace(',', '');
 
   const highlightsWrapper = document.querySelector('[data-ontrack-id="property-highlights-list"]');
-  const collectHighlightInfo = Array.from(highlightsWrapper.querySelectorAll('.grid')).map((item, index) => {
-    if (index <= HIGHLIGHT_THRESHOLD) {
-      return item.cloneNode(true);
-    }
-  });
+  const collectHighlightInfo = Array.from(highlightsWrapper.querySelectorAll('.grid'))
+    .map((item, index) => item.cloneNode(true))
+    .splice(0, HIGHLIGHT_THRESHOLD + 1);
 
   return {
     imageSrc,
@@ -63,6 +61,8 @@ export default () => {
         pollerLite(['#headlessui-portal-root .grid-flow-row', `#headlessui-portal-root input[value="${submitValue}"]`], () => {
           const modalWrapper = document.querySelector('#headlessui-portal-root');
           modalWrapper.classList.add(`${ID}__modalWrapper`);
+          const gridWrapper = modalWrapper.querySelector('.grid-flow-row');
+          gridWrapper.classList.add(`${ID}__gridWrapper`);
           const element = document.querySelector(`.${ID}__elementWrapper`);
           const cloneElement = element.cloneNode(true);
           const mainContainer = document.querySelector('#headlessui-portal-root .grid-flow-row');
@@ -79,11 +79,14 @@ export default () => {
   init(); //
 
   onUrlChange(() => {
-    pollerLite(['body', () => window.location.pathname.includes('/listings/')], () => {
-      if (!document.documentElement.classList.contains(ID)) {
-        setup();
-        setTimeout(init, DOM_INTERVAL);
+    pollerLite(
+      ['body', () => window.location.pathname.includes('/listings/') || window.location.pathname.includes('/immobilien/')],
+      () => {
+        if (!document.documentElement.classList.contains(ID)) {
+          setup();
+          setTimeout(init, DOM_INTERVAL);
+        }
       }
-    });
+    );
   }); //
 };
